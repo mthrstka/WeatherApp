@@ -3,3 +3,6 @@ PUT ALL REFERENCES USED HERE FOR FUTURE REFERENCE:
 HttpRequest -> https://docs.oracle.com/en%2Fjava%2Fjavase%2F11%2Fdocs%2Fapi%2F%2F/java.net.http/java/net/http/HttpRequest.html
 HttpClient -> https://docs.oracle.com/en%2Fjava%2Fjavase%2F11%2Fdocs%2Fapi%2F%2F/java.net.http/java/net/http/HttpClient.html
 HttpResponse -> https://docs.oracle.com/en%2Fjava%2Fjavase%2F11%2Fdocs%2Fapi%2F%2F/java.net.http/java/net/http/HttpResponse.html
+
+JSON General Info -> https://www.json.org/json-en.html
+JSONHandling (org.json) -> https://github.com/stleary/JSON-java

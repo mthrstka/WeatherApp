@@ -11,10 +11,22 @@ public class APICallerTest {
         APICaller test = new APICaller();
         String result = null;
         try {
-            result = test.makeRequest(44.0499, -91.63946 ); // Winona MN
+            result = test.requestLocation(44.0499, -91.63946 ); // Winona MN
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
         assertNotNull(result);
+    }
+
+    @Test void apiReturnsForecast() {
+        APICaller apiCaller = new APICaller();
+        try {
+            JSON data = new JSON(apiCaller.requestLocation(44.0499, -91.63946));
+            assertNotNull(apiCaller.sendRequest(data.getString("properties/forecast")));
+            // TODO: Add a specific thing to check for as well instead of just 'is null'
+
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
