@@ -23,7 +23,7 @@ public class JSON {
 
         String[] locationArray = location.split("/");
         String result = null;
-
+        JSONObject object = this.object;
 
         for (String index : locationArray){
             try{

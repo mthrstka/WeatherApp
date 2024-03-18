@@ -12,11 +12,11 @@ public class Day {
         isDaytime = Boolean.parseBoolean(json.getString("isDaytime"));
         temperature = json.getString("temperature");
         temperatureUnit = json.getString("temperatureUnit");
-        // precipitationChance = json.getString("probabilityOfPrecipitation/value");
-        // dewPoint = json.getString("dewpoint/value");
-        // humidity = json.getString("relativeHumidity/value");
-        // windSpeed = json.getString("windSpeed");
-        // windDirection = json.getString("windDirection");
+        precipitationChance = json.getString("probabilityOfPrecipitation/value");
+        dewPoint = json.getString("dewpoint/value");
+        humidity = json.getString("relativeHumidity/value");
+        windSpeed = json.getString("windSpeed");
+        windDirection = json.getString("windDirection");
         forecast = json.getString("shortForecast");
         longForecast = json.getString("detailedForecast");
 
