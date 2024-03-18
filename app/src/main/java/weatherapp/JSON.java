@@ -1,5 +1,6 @@
 package weatherapp;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,19 +18,28 @@ public class JSON {
     }
 
     public String getString(String location) { // Get value in directory format, seperated by '/' (like a file system)
+        if(location.equals(""))
+            return object.toString();
 
         String[] locationArray = location.split("/");
         String result = null;
 
+
         for (String index : locationArray){
             try{
-                object = object.getJSONObject(index);
+                if(index.contains("[")){
+                    String arrayIndex = index.substring(0, index.indexOf("["));
+                    int arrayNum = Integer.parseInt(index.substring(index.indexOf("[")+1, index.indexOf("]")));
+                    JSONArray array = object.getJSONArray(arrayIndex);
+                    object = array.getJSONObject(arrayNum); // NOTE: This assumes we do not have another array inside this array... If we do this will NOT work.
+                } else
+                    object = object.getJSONObject(index);
             } catch (JSONException e) { // This is fine, means we are at the last object
-                result = object.get(index).toString();
+                return object.get(index).toString();
             }
         }
 
-        return result;
+        return object.toString(); // If we ever reach this point, just return whatever is still left
 
     }
 
